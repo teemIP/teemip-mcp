@@ -1,0 +1,12 @@
+{% if json.objects === null %}
+    {{json.message}}
+{% else %}
+    {% if json.objects %}
+        {% for obj in json.objects %}
+            {{ obj.class }} {{ obj.key }}
+            {{ obj.text_file|raw }}
+        {% endfor %}
+    {% else %}
+        The result is an empty list. No object found.
+    {% endif %}
+{% endif %}
