@@ -9,9 +9,6 @@ use Twig\Environment;
 use App\Service\iTopClientInterface;
 use Psr\Log\LoggerInterface;
 use App\Tools\iTopRestTools;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 
 class TipPickIpAddressInSubnetTools extends iTopRestTools
 {

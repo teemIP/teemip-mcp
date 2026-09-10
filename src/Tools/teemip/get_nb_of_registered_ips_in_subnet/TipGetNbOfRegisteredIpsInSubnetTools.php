@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\Tools\teemip\get_nb_of_registered_ips_in_subnet;
 
 use Mcp\Capability\Attribute\McpTool;
-use Mcp\Capability\Attribute\Schema;
 use Mcp\Schema\ToolAnnotations;
 use Twig\Environment;
 use App\Service\iTopClientInterface;
@@ -14,11 +13,8 @@ use App\Tools\iTopRestTools;
 
 class TipGetNbOfRegisteredIpsInSubnetTools extends iTopRestTools
 {
-    private DatamodelService $datamodel;
-
     public function __construct(Environment $twig, iTopClientInterface $iTopClient, LoggerInterface $mcpLogger, DatamodelService $datamodel)
     {
-        $this->datamodel = $datamodel;
         parent::__construct($twig, $iTopClient, $mcpLogger);
     }
 
