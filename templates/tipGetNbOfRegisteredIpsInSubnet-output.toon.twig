@@ -1,0 +1,18 @@
+{% if json.objects === null %}
+    {{json.message}}
+{% else %}
+    {% if json.objects %}
+        {% for obj in json.objects %}
+            Subnet {{ obj.fields.name }} ({{ obj.fields.ip }}/{{ obj.fields.mask }}) - Organization: {{ obj.fields.org_name }}
+            Subnet size: {{ obj.subnet_size|number_format(0, '', '') }}
+            Allocated: {{ obj.nb_of_ips.allocated }}
+            Released: {{ obj.nb_of_ips.released }}
+            Reserved: {{ obj.nb_of_ips.reserved }}
+            Unassigned: {{ obj.nb_of_ips.unassigned }}
+            Total registered: {{ obj.nb_of_ips['total registered'] }}
+            Free IPs: {{ obj.nb_of_ips['free ips']|number_format(0, '', '') }}
+        {% endfor %}
+    {% else %}
+        The result is an empty list. No object found.
+    {% endif %}
+{% endif %}
