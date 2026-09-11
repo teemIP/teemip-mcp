@@ -26,7 +26,7 @@ class TipPickIpAddressInSubnetTools extends iTopRestTools
     public function pickIpAddressInSubnet(int $subnet_id, string $fields_json): string
     {
         if ($subnet_id < 0) {
-            $error = 'Error: invalid value for the parameter "$subnet_id". Expecting the key of the zone to consider.';
+            $error = 'Error: invalid value for the parameter "$subnet_id". Expecting the key of the subnet to consider.';
             $this->mcpLogger->error('[Tool called] pick_ip_address_in_subnet', ['error' => $error, 'object_class' => 'IPSubnet', 'object_key' => $subnet_id, 'fields_json' => $fields_json]);
             return $error;
         }

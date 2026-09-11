@@ -27,7 +27,7 @@ class TipGetNbOfRegisteredIpsInSubnetTools extends iTopRestTools
     public function getNbOfRegisteredIpsInSubnet(int $subnet_id): string
     {
         if ($subnet_id < 0) {
-            $error = 'Error: invalid value for the parameter "$subnet_id". Expecting the key of the zone to consider.';
+            $error = 'Error: invalid value for the parameter "$subnet_id". Expecting the key of the subnet to consider.';
             $this->mcpLogger->error('[Tool called] get_nb_of_registered_ips_in_subnet', ['error' => $error, 'object_class' => 'IPSubnet', 'object_key' => $subnet_id]);
             return $error;
         }
