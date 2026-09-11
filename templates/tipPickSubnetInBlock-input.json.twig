@@ -1,0 +1,15 @@
+{
+    "operation":"teemip/pick_subnet_in_block",
+    "class":"{{ class }}",
+    "key":"{{ key }}",
+    "output_fields": "name, ip, mask, status, type, requestor_id",
+    "fields": {
+        {% for code, value in fields %}
+            {% if value is iterable %}
+                "{{ code }}":{{ value|json_encode|raw }}{% if not loop.last %},{% endif %}
+            {% else %}
+                "{{ code }}":"{{ value }}"{% if not loop.last %},{% endif %}
+            {% endif %}
+        {% endfor %}
+    }
+}
